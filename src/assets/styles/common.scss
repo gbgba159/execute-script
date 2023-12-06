@@ -1,0 +1,56 @@
+// 全局样式变量
+
+$main-color: #409eff; // 主题色
+$border: 1px solid #e3e3e3; // 默认边框
+
+// 宽高100%
+@mixin full($display: block) {
+	width: 100%;
+	height: 100%;
+	display: $display;
+}
+
+// flex居中
+@mixin center($display: flex) {
+	display: $display;
+	align-items: center;
+	justify-content: center;
+}
+
+// flex水平布局
+@mixin row-flex($place: center) {
+	display: flex;
+	align-items: $place;
+}
+
+// 超出$row行省略
+@mixin line($row: 1) {
+	@if $row == 1 {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	} @else {
+		display: -webkit-box;
+		/*! autoprefixer: ignore next */
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $row;
+		word-break: break-all;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+// 主题色半透明
+@function mc-opacity($reduce: 0.5) {
+	@return transparentize($main-color, 1 - $reduce);
+}
+
+// 主题色盒子阴影
+@function mc-shadow($reduce: 0.74) {
+	@return 1rpx 12rpx 21rpx 0rpx transparentize($main-color, $reduce);
+}
+
+// 主题色径向渐变
+@function mc-linear($deg: 90deg, $reduce: 0.4) {
+	@return linear-gradient($deg, $main-color, transparentize($main-color, $reduce));
+}

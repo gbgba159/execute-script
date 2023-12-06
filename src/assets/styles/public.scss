@@ -1,0 +1,50 @@
+@import url('element-plus/theme-chalk/el-loading.css');
+@import url('element-plus/theme-chalk/el-message.css');
+@import url('element-plus/theme-chalk/el-message-box.css');
+@import url('element-plus/theme-chalk/el-notification.css');
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	flex-shrink: 0;
+	font-size: 16px;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+i {
+	font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: normal;
+}
+
+body {
+	background-color: #fff;
+	color: #212121;
+}
+
+a {
+	text-decoration: none;
+}
+
+input,
+button,
+textarea {
+	border: none;
+	resize: none;
+	outline: none;
+	font-size: 28px;
+	color: #212121;
+	background-color: transparent;
+	min-width: 0;
+	&::after {
+		border: none;
+	}
+}
